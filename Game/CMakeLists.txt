@@ -1,6 +1,9 @@
 add_executable(game 
-    src/app.cpp
-    src/sdl.cpp
+    src/Main.cpp
+    src/Window.cpp
+    src/Surface.cpp
+    src/SDLWrap.cpp
+    src/Application.cpp
 )
 
 find_package(SDL2 REQUIRED)
@@ -11,11 +14,3 @@ target_include_directories(game
 target_link_libraries(game 
     PRIVATE ${SDL2_LIBRARIES}
 )
-
-# target_link_libraries(game 
-#     PRIVATE ${CMAKE_SOURCE_DIR}/bin/SDL2.dll
-# )
-
-# target_include_directories(game
-#     PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/vendor/SDL2-x86_64-w64-mingw32/include
-# )
