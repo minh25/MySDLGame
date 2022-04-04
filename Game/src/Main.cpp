@@ -5,6 +5,7 @@
 #include "Window.h"
 #include "Surface.h"
 #include "SDLWrap.h"
+#include "SDLImageWrap.h"
 
 // Using SDL and standard IO
 #include <SDL.h>
@@ -23,6 +24,7 @@ enum KeyPressSurfaces
 int main(int argc, char *args[])
 {
     std::unique_ptr<SDLWrap> sdlWrap(new SDLWrap(SDL_INIT_VIDEO));
+    std::unique_ptr<SDLImageWrap> sdlImageWrap(new SDLImageWrap(IMG_INIT_JPG | IMG_INIT_PNG));
 
     std::unique_ptr<Window> window(new Window("My Game", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 640, 480, SDL_WINDOW_SHOWN));
 
